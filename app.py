@@ -74,10 +74,16 @@ def parse_iso(value: str | None) -> datetime | None:
 
 @st.cache_resource
 def get_supabase() -> Client:
-    url = st.secrets.get("SUPABASE_URL", "")
-    key = st.secrets.get("SUPABASE_SERVICE_ROLE_KEY", "")
+    url = st.secrets.get("SUPABASE_URL", "").strip().rstrip("/")
+    key = st.secrets.get("SUPABASE_SERVICE_ROLE_KEY", "").strip()
+
+    # Supabase Python 클라이언트에는 프로젝트 루트 URL만 전달합니다.
+    if url.endswith("/rest/v1"):
+        url = url[:-len("/rest/v1")]
+
     if not url or not key:
         raise RuntimeError("SUPABASE_URL과 SUPABASE_SERVICE_ROLE_KEY를 설정하세요.")
+
     return create_client(url, key)
 
 
