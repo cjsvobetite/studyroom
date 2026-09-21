@@ -557,7 +557,16 @@ def main() -> None:
     if user.get("is_admin"):
         with tabs[3]:
             admin_tab(user)
-
+    st.divider()
+    st.markdown(
+        """
+        <p style="text-align: center; color: #808080; font-size: 0.78rem; margin-top: 0.5rem;">
+        Webpage designed by 한양대학교 의과대학 스터디룸 제작 TF
+        (변서현, 박예영, 최준서, 한승주)
+        </p>
+        """,
+        unsafe_allow_html=True,
+    )
 
 if __name__ == "__main__":
     main()
