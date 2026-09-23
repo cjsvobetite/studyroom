@@ -134,6 +134,21 @@ def current_user():
     sid = st.session_state.get("sid")
     return one("users", "student_id", sid) if sid else None
 
+
+def flash(scope: str, message: str, kind: str = "success") -> None:
+    """st.rerun() 직후에도 메시지가 보이도록 세션에 저장해 둔다."""
+    st.session_state[f"flash_{scope}"] = (kind, message)
+
+
+def show_flash(scope: str) -> None:
+    """flash()로 저장된 메시지를 한 번만 표시한다."""
+    item = st.session_state.pop(f"flash_{scope}", None)
+    if not item:
+        return
+    kind, message = item
+    show = {"success": st.success, "error": st.error, "warning": st.warning}.get(kind, st.info)
+    show(message)
+
 header_component = st.components.v2.component(
     name="header",
     html="""
@@ -273,6 +288,7 @@ def room_schedule(room_id: int, chosen_date: date) -> list[dict]:
 
 def reservation_tab(user: dict) -> None:
     st.subheader("새 예약")
+    show_flash("booking")
     if setting("global_lock", "0") == "1":
         st.warning("현재 관리자가 전체 예약을 잠갔습니다.")
         return
@@ -327,7 +343,7 @@ def reservation_tab(user: dict) -> None:
             if isinstance(result, list):
                 result = result[0] if result else {}
             if result and result.get("ok"):
-                st.success(result.get("message", "예약이 완료되었습니다."))
+                flash("booking", result.get("message", "예약이 완료되었습니다."))
                 st.rerun()
             else:
                 st.error((result or {}).get("message", "예약할 수 없습니다."))
@@ -364,6 +380,7 @@ def cancel_reservation(reservation_id: int, actor: dict) -> tuple[bool, str]:
 
 def my_reservations_tab(user: dict) -> None:
     st.subheader("내 예약")
+    show_flash("my_reservations")
     rows = reservation_rows(user["student_id"])
     if not rows:
         st.info("활성 예약이 없습니다.")
@@ -383,9 +400,11 @@ def my_reservations_tab(user: dict) -> None:
                 submitted = st.button("취소", key=f"cancel_{row['id']}", width="stretch")
             if submitted:
                 ok, message = cancel_reservation(row["id"], user)
-                (st.success if ok else st.error)(message)
                 if ok:
+                    flash("my_reservations", message)
                     st.rerun()
+                else:
+                    st.error(message)
 
 
 def account_tab(user: dict) -> None:
@@ -427,6 +446,7 @@ def admin_overview(user: dict) -> None:
     m3.metric("예정 예약", reservations.count or 0, border=True)
 
     st.markdown("#### 운영 설정")
+    show_flash("admin_overview")
     locked = setting("global_lock", "0") == "1"
     if st.button("전체 예약 잠금 해제" if locked else "전체 예약 잠그기", type="primary" if not locked else "secondary"):
         save_setting("global_lock", "0" if locked else "1")
@@ -437,12 +457,13 @@ def admin_overview(user: dict) -> None:
         if st.form_submit_button("화면 설정 저장"):
             save_setting("announcement", announcement)
             save_setting("logo_url", logo_url)
-            st.success("화면 설정을 저장했습니다.")
+            flash("admin_overview", "화면 설정을 저장했습니다.")
             st.rerun()
 
 
 def admin_rooms() -> None:
     db = get_supabase()
+    show_flash("admin_rooms")
     with st.form("room_add"):
         name = st.text_input("새 스터디룸 이름")
         if st.form_submit_button("스터디룸 추가"):
@@ -450,7 +471,7 @@ def admin_rooms() -> None:
                 st.error("이름을 입력하세요.")
             else:
                 db.table("rooms").insert({"name": name.strip(), "is_active": True}).execute()
-                st.success("스터디룸을 추가했습니다.")
+                flash("admin_rooms", "스터디룸을 추가했습니다.")
                 st.rerun()
     rooms = db.table("rooms").select("*").order("id").execute().data or []
     for room in rooms:
@@ -494,6 +515,7 @@ def upsert_roster(file, overwrite: bool) -> tuple[int, int]:
 
 def admin_users() -> None:
     db = get_supabase()
+    show_flash("admin_users")
     with st.expander("사용자 직접 추가", expanded=False):
         with st.form("user_add"):
             sid = st.text_input("학번")
@@ -514,7 +536,7 @@ def admin_users() -> None:
                             "is_active": True,
                         }
                     ).execute()
-                    st.success("사용자를 추가했습니다.")
+                    flash("admin_users", "사용자를 추가했습니다.")
                     st.rerun()
 
     with st.expander("엑셀 명단 업로드", expanded=True):
