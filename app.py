@@ -22,30 +22,29 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+
 st.markdown(
     """
-<style>
-:root { --primary:#2783DE; --ink:#2C2C2B; --muted:#7D7A75; --border:#E6E5E3; --soft:#F9F8F7; }
-.stApp { background:#FFFFFF; color:var(--ink); }
-.block-container { max-width:1080px; padding-top:2rem; padding-bottom:5rem; }
-[data-testid="stSidebar"] { background:#F9F8F7; border-right:1px solid #E6E5E3; }
-.hero { padding:24px 28px; border:1px solid #E6E5E3; border-radius:12px; background:linear-gradient(135deg,#FFFFFF 0%,#F4F9FE 100%); margin-bottom:24px; }
-.hero h1 { margin:0 0 6px; font-size:2rem; letter-spacing:-0.03em; }
-.hero p { margin:0; color:#6B7280; }
-.metric-card { padding:18px; border:1px solid #E6E5E3; border-radius:10px; background:#FFFFFF; }
-.slot-card { padding:14px 16px; border:1px solid #E6E5E3; border-radius:10px; background:#F9F8F7; margin:8px 0; }
-.small-muted { color:#7D7A75; font-size:0.9rem; }
-div.stButton > button, div.stFormSubmitButton > button { min-height:44px; border-radius:8px; font-weight:650; }
-div[data-testid="stMetric"] { border:1px solid #E6E5E3; padding:16px; border-radius:10px; background:#FFFFFF; }
-[data-baseweb="tab-list"] { gap:8px; }
-[data-baseweb="tab"] { height:44px; }
-@media (max-width: 640px) {
-  .block-container { padding:1.1rem 1rem 4rem; }
-  .hero { padding:20px; }
-  .hero h1 { font-size:1.55rem; }
-}
-</style>
-""",
+    <style>
+        .block-container { 
+            max-width:1080px; 
+            padding-top:3rem; 
+            padding-bottom:5rem; 
+        }
+        div[data-testid="stMetric"] { 
+            padding:16px; 
+            border-radius:10px; 
+        }
+        div.stButton > button, 
+        div.stFormSubmitButton > button { 
+            min-height:44px; 
+            border-radius:8px; 
+            font-weight:650; 
+        }
+        [data-baseweb="tab-list"] { gap: 8px; }
+        [data-baseweb="tab"] { height: 44px; }
+    </style>
+    """,
     unsafe_allow_html=True,
 )
 
@@ -135,19 +134,84 @@ def current_user():
     sid = st.session_state.get("sid")
     return one("users", "student_id", sid) if sid else None
 
+header_component = st.components.v2.component(
+    name="header",
+    html="""
+        <div class="hero"><h1>📚 스터디룸 예약</h1>
+        <p>제2의학관 스터디룸을 간편하게 예약하세요.</p></div>
+    """,
+    css="""
+        .hero {
+            padding: 24px 28px; 
+            border: 1px solid var(--st-border-color); 
+            border-radius: 12px; 
+            background: linear-gradient(
+                135deg, 
+                var(--st-background-color) 0%, 
+                var(--st-blue-background-color) 100%
+            ); 
+            margin-bottom: 24px; 
+        }
+        .hero h1 { 
+            margin: 0 0 6px; 
+            font-size: 2rem; 
+            letter-spacing:-0.03em;
+        }
+        .hero p { 
+            margin: 0; 
+            color: var(--st-gray-text-color); 
+        }
+        @media (max-width: 640px) {
+            .hero { padding: 20px; }
+            .hero h1 { font-size: 1.55rem; }
+        }
+    """,
+    js="""
+        export default function({ data, parentElement }) {
+            const container = parentElement.querySelector("p");
+            if (data?.announcement) {
+                container.textContent = data.announcement;
+            }
+        }
+    """
+)
+slot_component = st.components.v2.component(
+    name="slot",
+    html="""
+        <div class="slot-card">
+            <b></b>
+            <div class="small-muted">예약 완료</div>
+        </div>
+    """,
+    css="""
+        .slot-card { 
+            padding: 14px 16px; 
+            border: 1px solid var(--st-border-color); 
+            border-radius: 10px; 
+            background: var(--st-secondary-background-color); 
+            margin: 8px 0;
+        }
+        .small-muted { 
+            color: var(--st-gray-text-color); 
+            font-size: 0.9rem; 
+        }
+    """,
+    js="""
+        export default function({ data, parentElement }) {
+            const container = parentElement.querySelector("b");
+            container.textContent = data.range;
+        }
+    """
+)
 
 def login_screen() -> None:
     left, center, right = st.columns([1, 1.25, 1])
     with center:
-        st.markdown(
-            """<div class="hero"><h1>📚 스터디룸 예약</h1>
-            <p>제2의학관 스터디룸을 간편하게 예약하세요.</p></div>""",
-            unsafe_allow_html=True,
-        )
+        header_component()
         with st.form("login_form"):
             sid = st.text_input("학번 또는 관리자 아이디")
             password = st.text_input("비밀번호", type="password")
-            submitted = st.form_submit_button("로그인", type="primary", use_container_width=True)
+            submitted = st.form_submit_button("로그인", type="primary", width="stretch")
         if submitted:
             user = one("users", "student_id", sid.strip())
             if not user or not check_password_hash(user.get("password_hash", ""), password):
@@ -177,15 +241,6 @@ def sidebar(user: dict) -> None:
         if st.button("로그아웃", use_container_width=True):
             st.session_state.pop("sid", None)
             st.rerun()
-
-
-def show_header() -> None:
-    announcement = setting("announcement", "스터디룸 예약 시스템에 오신 것을 환영합니다.")
-    st.markdown(
-        f"""<div class="hero"><h1>제2의학관 스터디룸</h1>
-        <p>{escape(announcement)}</p></div>""",
-        unsafe_allow_html=True,
-    )
 
 
 def active_rooms() -> list[dict]:
@@ -243,11 +298,9 @@ def reservation_tab(user: dict) -> None:
     with st.expander("선택한 방의 예약 현황", expanded=True):
         if schedule:
             for row in schedule:
-                st.markdown(
-                    f"<div class='slot-card'><b>{range_to_str(row['start_slot'], row['end_slot'])}</b>"
-                    f"<div class='small-muted'>예약 완료</div></div>",
-                    unsafe_allow_html=True,
-                )
+                slot_component(data={
+                    "range": range_to_str(row['start_slot'], row['end_slot'])
+                })
         else:
             st.caption("아직 예약이 없습니다.")
 
@@ -317,15 +370,18 @@ def my_reservations_tab(user: dict) -> None:
         return
     for row in rows:
         room_name = (row.get("rooms") or {}).get("name", "스터디룸")
-        c1, c2 = st.columns([4, 1])
-        with c1:
-            st.markdown(
-                f"<div class='slot-card'><b>{escape(room_name)}</b> · {row['res_date']} · "
-                f"{range_to_str(row['start_slot'], row['end_slot'])}</div>",
-                unsafe_allow_html=True,
-            )
-        with c2:
-            if st.button("취소", key=f"cancel_{row['id']}", use_container_width=True):
+        with st.container(border=True):
+            c1, c2 = st.columns([4, 1], wrap=False)
+            submitted = None
+            with c1:
+                st.markdown(
+                    f"<div class='slot-card'><b>{escape(room_name)}</b> · {row['res_date']} · "
+                    f"{range_to_str(row['start_slot'], row['end_slot'])}</div>",
+                    unsafe_allow_html=True,
+                )
+            with c2:
+                submitted = st.button("취소", key=f"cancel_{row['id']}", width="stretch")
+            if submitted:
                 ok, message = cancel_reservation(row["id"], user)
                 (st.success if ok else st.error)(message)
                 if ok:
@@ -366,9 +422,9 @@ def admin_overview(user: dict) -> None:
         .execute()
     )
     m1, m2, m3 = st.columns(3)
-    m1.metric("사용자", users.count or 0)
-    m2.metric("활성 스터디룸", rooms.count or 0)
-    m3.metric("예정 예약", reservations.count or 0)
+    m1.metric("사용자", users.count or 0, border=True)
+    m2.metric("활성 스터디룸", rooms.count or 0, border=True)
+    m3.metric("예정 예약", reservations.count or 0, border=True)
 
     st.markdown("#### 운영 설정")
     locked = setting("global_lock", "0") == "1"
@@ -398,11 +454,12 @@ def admin_rooms() -> None:
                 st.rerun()
     rooms = db.table("rooms").select("*").order("id").execute().data or []
     for room in rooms:
-        c1, c2 = st.columns([4, 1])
-        c1.write(f"**{room['name']}** · {'활성' if room['is_active'] else '비활성'}")
-        if c2.button("상태 전환", key=f"room_{room['id']}", use_container_width=True):
-            db.table("rooms").update({"is_active": not room["is_active"]}).eq("id", room["id"]).execute()
-            st.rerun()
+        with st.container(border=True):
+            c1, c2 = st.columns([4, 1], wrap=False)
+            c1.write(f"**{room['name']}** · {'활성' if room['is_active'] else '비활성'}")
+            if c2.button("상태 전환", key=f"room_{room['id']}", width="stretch"):
+                db.table("rooms").update({"is_active": not room["is_active"]}).eq("id", room["id"]).execute()
+                st.rerun()
 
 
 def upsert_roster(file, overwrite: bool) -> tuple[int, int]:
@@ -476,23 +533,26 @@ def admin_users() -> None:
         q = query.lower()
         users = [u for u in users if q in u["student_id"].lower() or q in (u.get("name") or "").lower()]
     for member in users[:100]:
-        c1, c2, c3 = st.columns([4, 1.2, 1.2])
-        label = f"{member['student_id']} · {member.get('name') or '-'}"
-        if member.get("is_admin"):
-            label += " · 관리자"
-        if member.get("suspend_until"):
-            label += f" · 정지 {parse_iso(member['suspend_until']):%m-%d %H:%M}까지"
-        c1.write(label)
-        if not member.get("is_admin"):
-            if c2.button("승인 전환", key=f"active_{member['student_id']}"):
-                db.table("users").update({"is_active": not member["is_active"]}).eq(
-                    "student_id", member["student_id"]
-                ).execute()
-                st.rerun()
-            if c3.button("3일 정지", key=f"suspend_{member['student_id']}"):
-                until = (now_kst() + timedelta(days=3)).isoformat()
-                db.table("users").update({"suspend_until": until}).eq("student_id", member["student_id"]).execute()
-                st.rerun()
+        with st.container(border=True):
+            c1, c2, c3 = st.columns([4, 1, 1])
+            label = f"{member['student_id']} · {member.get('name') or '-'}"
+            if member.get("is_admin"):
+                label += " · 관리자"
+            if member.get("suspend_until"):
+                label += f" · 정지 {parse_iso(member['suspend_until']):%m-%d %H:%M}까지"
+            if not member.get("is_active"):
+                label += " · 비승인"
+            c1.write(label)
+            if not member.get("is_admin"):
+                if c2.button("승인 전환", key=f"active_{member['student_id']}", width="stretch"):
+                    db.table("users").update({"is_active": not member["is_active"]}).eq(
+                        "student_id", member["student_id"]
+                    ).execute()
+                    st.rerun()
+                if c3.button("3일 정지", key=f"suspend_{member['student_id']}", width="stretch"):
+                    until = (now_kst() + timedelta(days=3)).isoformat()
+                    db.table("users").update({"suspend_until": until}).eq("student_id", member["student_id"]).execute()
+                    st.rerun()
 
 
 def admin_reservations(user: dict) -> None:
@@ -502,14 +562,15 @@ def admin_reservations(user: dict) -> None:
         return
     for row in rows:
         room_name = (row.get("rooms") or {}).get("name", "스터디룸")
-        c1, c2 = st.columns([5, 1])
-        c1.write(
-            f"**{row['student_id']}** · {room_name} · {row['res_date']} · "
-            f"{range_to_str(row['start_slot'], row['end_slot'])}"
-        )
-        if c2.button("관리자 취소", key=f"admin_cancel_{row['id']}"):
-            cancel_reservation(row["id"], user)
-            st.rerun()
+        with st.container(border=True):
+            c1, c2 = st.columns([5, 1], wrap=False)
+            c1.write(
+                f"**{row['student_id']}** · {room_name} · {row['res_date']} · "
+                f"{range_to_str(row['start_slot'], row['end_slot'])}"
+            )
+            if c2.button("관리자 취소", key=f"admin_cancel_{row['id']}", width="stretch"):
+                cancel_reservation(row["id"], user)
+                st.rerun()
 
 
 def admin_tab(user: dict) -> None:
@@ -545,7 +606,11 @@ def main() -> None:
         st.stop()
 
     sidebar(user)
-    show_header()
+    header_component(data={ 
+       "announcement": setting(
+           "announcement", "스터디룸 예약 시스템에 오신 것을 환영합니다."
+       )
+    })
     tab_names = ["예약", "내 예약", "계정"] + (["관리자"] if user.get("is_admin") else [])
     tabs = st.tabs(tab_names)
     with tabs[0]:
