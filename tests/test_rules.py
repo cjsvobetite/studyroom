@@ -12,6 +12,7 @@ from studyroom.rules import (
     reservation_phase,
     sanitize_search,
     valid_units,
+    visible_slots,
     validate_new_password,
 )
 
@@ -103,3 +104,11 @@ def test_parse_roster():
 def test_parse_roster_requires_columns():
     with pytest.raises(ValueError):
         parse_roster([], ["이름"])
+
+
+def test_visible_slots_hides_past_hours_today_only():
+    evening = datetime(2026, 10, 2, 17, 40, tzinfo=KST)
+    assert visible_slots(Rules(), DAY, evening) == range(34, 48)
+    assert visible_slots(Rules(), DAY + timedelta(days=1), evening) == range(0, 48)
+    assert visible_slots(Rules(open_slot=36, close_slot=44), DAY, evening) == range(36, 44)
+    assert not visible_slots(Rules(close_slot=30), DAY, evening)

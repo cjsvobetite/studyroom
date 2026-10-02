@@ -6,7 +6,7 @@ import re
 from dataclasses import dataclass
 from datetime import date, datetime
 
-from .config import DEFAULT_SETTINGS, PASSWORD_MIN_LENGTH, SLOTS_PER_DAY
+from .config import DEFAULT_SETTINGS, PASSWORD_MIN_LENGTH, SLOT_MINUTES, SLOTS_PER_DAY
 from .timeutil import parse_iso, slot_start
 
 
@@ -41,6 +41,14 @@ class Rules:
     @property
     def slots(self) -> range:
         return range(self.open_slot, self.close_slot)
+
+
+def visible_slots(rules: Rules, day: date, now: datetime) -> range:
+    """현황표에 보여 줄 슬롯. 오늘은 이미 지난 시간대를 빼고 현재 시각(정시)부터 보여 준다."""
+    start = rules.open_slot
+    if day == now.date():
+        start = max(start, now.hour * 60 // SLOT_MINUTES)
+    return range(start, max(start, rules.close_slot))
 
 
 def occupied_slots(reservations: list[dict]) -> set[int]:

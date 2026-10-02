@@ -7,7 +7,7 @@ from html import escape
 
 import streamlit as st
 
-from .rules import Rules
+from .rules import Rules, visible_slots
 from .timeutil import slot_start, slot_to_str
 
 STYLES = """
@@ -30,10 +30,10 @@ STYLES = """
     .hero p { margin: 0; opacity: 0.75; }
 
     .sched-wrap { overflow-x: auto; margin: 4px 0 8px; }
-    .sched { border-collapse: separate; border-spacing: 2px; font-size: 0.72rem; }
+    .sched { width: 100%; border-collapse: separate; border-spacing: 2px; font-size: 0.72rem; }
     .sched th { font-weight: 500; opacity: 0.7; text-align: left; padding: 0 2px; white-space: nowrap; }
-    .sched th.room { padding-right: 8px; font-size: 0.85rem; font-weight: 650; opacity: 1; }
-    .sched td { width: 18px; min-width: 18px; height: 26px; border-radius: 3px; padding: 0; }
+    .sched th.room { width: 1%; padding-right: 8px; font-size: 0.85rem; font-weight: 650; opacity: 1; }
+    .sched td { min-width: 14px; height: 26px; border-radius: 3px; padding: 0; }
     .sched td.free { background: rgba(33, 150, 83, 0.30); }
     .sched td.taken { background: rgba(128, 128, 128, 0.45); }
     .sched td.mine { background: rgba(14, 116, 230, 0.85); }
@@ -108,13 +108,18 @@ def schedule_grid(
         for slot in range(row["start_slot"], row["end_slot"]):
             status[(row["room_id"], slot)] = kind
 
+    slots = visible_slots(rules, day, now)
+    if not slots:
+        st.caption("오늘 운영 시간이 끝났습니다. 다른 날짜를 선택하세요.")
+        return
+
     header = "".join(
-        f"<th>{slot_to_str(slot)[:2] if slot % 2 == 0 else ''}</th>" for slot in rules.slots
+        f"<th>{slot_to_str(slot)[:2] if slot % 2 == 0 else ''}</th>" for slot in slots
     )
     body = []
     for room in rooms:
         cells = []
-        for slot in rules.slots:
+        for slot in slots:
             kind = status.get((room["id"], slot))
             if kind is None:
                 kind = "past" if slot_start(day, slot + 1) <= now else "free"
