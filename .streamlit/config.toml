@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#0E4A84"
+
+[server]
+# 엑셀 명단 업로드 용량 제한 (MB)
+maxUploadSize = 10
