@@ -1,7 +1,5 @@
 # 제2의학관 스터디룸 예약 — Streamlit
 
-> AI 시험 문항 생성기는 [`exam_generator/`](exam_generator/README.md) 폴더에 별도 앱으로 들어 있습니다.
-
 GitHub + Streamlit Community Cloud + Supabase 기반 예약 웹앱입니다.
 
 ## 파일 구조

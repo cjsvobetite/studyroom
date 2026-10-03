@@ -1,6 +1,0 @@
-streamlit>=1.40,<2
-openai>=1.40,<3
-pandas>=2.2,<4
-reportlab>=4.0,<5
-pypdf>=4.0,<7
-python-pptx>=1.0,<2
