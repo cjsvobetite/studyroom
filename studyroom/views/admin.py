@@ -12,9 +12,15 @@ import streamlit as st
 from werkzeug.security import generate_password_hash
 
 from .. import db
-from ..config import PASSWORD_MIN_LENGTH, SLOTS_PER_DAY, SUSPEND_DAY_OPTIONS, USERS_PAGE_SIZE
+from ..config import (
+    BOOKING_WINDOW_CHOICES,
+    PASSWORD_MIN_LENGTH,
+    SLOTS_PER_DAY,
+    SUSPEND_DAY_OPTIONS,
+    USERS_PAGE_SIZE,
+)
 from ..rules import Rules, parse_roster, reservation_phase, sanitize_search
-from ..timeutil import duration_str, now_kst, parse_iso, range_to_str, slot_to_str
+from ..timeutil import duration_str, now_kst, parse_iso, range_to_str, slot_to_str, window_label
 from ..ui import flash, show_flash
 from .mine import confirm_cancel
 
@@ -77,7 +83,14 @@ def admin_overview() -> None:
     time_choices = list(range(SLOTS_PER_DAY + 1))
     with st.form("rules_form"):
         c1, c2 = st.columns(2)
-        window = c1.number_input("예약 가능 기간 (오늘 포함 일수)", 1, 30, rules.booking_window_days)
+        window_choices = sorted(set(BOOKING_WINDOW_CHOICES) | {rules.booking_window_days})
+        window = c1.selectbox(
+            "예약 가능 기간",
+            window_choices,
+            index=window_choices.index(rules.booking_window_days),
+            format_func=window_label,
+            help="오늘부터 며칠 뒤까지 미리 예약할 수 있는지 정합니다. 예: 2주 → 오늘 포함 14일",
+        )
         limit = c2.selectbox(
             "1인 하루 최대 이용 시간",
             list(range(1, 17)),

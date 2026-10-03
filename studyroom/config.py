@@ -24,6 +24,12 @@ DEFAULT_SETTINGS: dict[str, str] = {
     "close_slot": str(SLOTS_PER_DAY),
 }
 
+# 예약 가능 기간(오늘 포함 일수). 관리자 화면에서 고를 수 있는 값과 최댓값.
+MAX_BOOKING_WINDOW_DAYS = 56
+BOOKING_WINDOW_CHOICES = [1, 2, 3, 4, 5, 6, 7, 14, 21, 28, 35, 42, 49, 56]
+# 이 일수까지는 날짜를 버튼으로, 넘으면 달력으로 고른다.
+DATE_PILLS_MAX_DAYS = 14
+
 PASSWORD_MIN_LENGTH = 8
 MAX_FAILED_LOGINS = 5
 LOGIN_LOCK_MINUTES = 10

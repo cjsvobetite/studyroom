@@ -6,7 +6,13 @@ import re
 from dataclasses import dataclass
 from datetime import date, datetime
 
-from .config import DEFAULT_SETTINGS, PASSWORD_MIN_LENGTH, SLOT_MINUTES, SLOTS_PER_DAY
+from .config import (
+    DEFAULT_SETTINGS,
+    MAX_BOOKING_WINDOW_DAYS,
+    PASSWORD_MIN_LENGTH,
+    SLOT_MINUTES,
+    SLOTS_PER_DAY,
+)
 from .timeutil import parse_iso, slot_start
 
 
@@ -32,7 +38,7 @@ class Rules:
         if close_slot <= open_slot:
             open_slot, close_slot = 0, SLOTS_PER_DAY
         return cls(
-            booking_window_days=_int_setting(settings, "booking_window_days", 1, 30),
+            booking_window_days=_int_setting(settings, "booking_window_days", 1, MAX_BOOKING_WINDOW_DAYS),
             daily_limit_slots=_int_setting(settings, "daily_limit_slots", 1, SLOTS_PER_DAY),
             open_slot=open_slot,
             close_slot=close_slot,

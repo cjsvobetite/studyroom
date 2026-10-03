@@ -132,7 +132,7 @@ declare
   v_used integer;
   v_end integer := p_start_slot + p_units;
   v_today date := (now() at time zone 'Asia/Seoul')::date;
-  v_window integer := least(greatest(public.setting_int('booking_window_days', 7), 1), 30);
+  v_window integer := least(greatest(public.setting_int('booking_window_days', 7), 1), 56);
   v_limit integer := least(greatest(public.setting_int('daily_limit_slots', 4), 1), 48);
   v_open integer := least(greatest(public.setting_int('open_slot', 0), 0), 47);
   v_close integer := least(greatest(public.setting_int('close_slot', 48), 1), 48);

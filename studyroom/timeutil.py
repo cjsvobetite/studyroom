@@ -32,6 +32,13 @@ def duration_str(slots: int) -> str:
     return f"{rest}분"
 
 
+def window_label(days: int) -> str:
+    """예약 가능 기간 표시. 7일 단위면 'N주'로 보여 준다."""
+    if days % 7 == 0:
+        return f"{days // 7}주 (오늘 포함 {days}일)"
+    return f"{days}일 (오늘 포함)"
+
+
 def slot_start(day: date, slot: int) -> datetime:
     return datetime.combine(day, time.min, tzinfo=KST) + timedelta(minutes=slot * SLOT_MINUTES)
 
