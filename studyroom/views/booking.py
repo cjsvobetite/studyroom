@@ -8,6 +8,7 @@ from datetime import timedelta
 import streamlit as st
 
 from .. import db
+from ..config import DATE_PILLS_MAX_DAYS
 from ..rules import Rules, available_starts, occupied_slots, valid_units
 from ..timeutil import date_label, duration_str, now_kst, range_to_str, slot_to_str
 from ..ui import flash, schedule_grid, show_flash
@@ -31,10 +32,17 @@ def render(user: dict) -> None:
     rules = Rules.from_settings(settings)
     now = now_kst()
     today = now.date()
-    dates = [today + timedelta(days=i) for i in range(rules.booking_window_days)]
-    day = st.pills(
-        "날짜", dates, default=today, format_func=lambda d: date_label(d, today), key="booking_date"
-    ) or today
+    last_day = today + timedelta(days=rules.booking_window_days - 1)
+    if rules.booking_window_days <= DATE_PILLS_MAX_DAYS:
+        dates = [today + timedelta(days=i) for i in range(rules.booking_window_days)]
+        day = st.pills(
+            "날짜", dates, default=today, format_func=lambda d: date_label(d, today), key="booking_date"
+        ) or today
+    else:
+        day = st.date_input(
+            "날짜", value=today, min_value=today, max_value=last_day, key="booking_date_cal"
+        ) or today
+    st.caption(f"{date_label(last_day, today)}까지 예약할 수 있습니다.")
 
     day_rows = db.reservations_on(day)
     me = user["student_id"]

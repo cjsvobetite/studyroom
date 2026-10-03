@@ -22,7 +22,8 @@ MORNING = datetime(2026, 10, 2, 8, 10, tzinfo=KST)  # 08:10 â†’ 08:30(slot 17)ë¶
 
 def test_rules_from_settings_clamps_and_defaults():
     rules = Rules.from_settings({"booking_window_days": "99", "daily_limit_slots": "abc"})
-    assert rules.booking_window_days == 30
+    assert rules.booking_window_days == 56
+    assert Rules.from_settings({"booking_window_days": "28"}).booking_window_days == 28
     assert rules.daily_limit_slots == 4
     assert Rules.from_settings({"open_slot": "20", "close_slot": "10"}).slots == range(0, 48)
 

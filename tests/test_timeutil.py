@@ -1,7 +1,15 @@
 from datetime import date, datetime
 
 from studyroom.config import KST
-from studyroom.timeutil import date_label, duration_str, parse_iso, range_to_str, slot_start, slot_to_str
+from studyroom.timeutil import (
+    date_label,
+    duration_str,
+    parse_iso,
+    range_to_str,
+    slot_start,
+    slot_to_str,
+    window_label,
+)
 
 
 def test_slot_to_str():
@@ -32,3 +40,9 @@ def test_date_label():
     assert date_label(today, today) == "오늘 10/2(금)"
     assert date_label(date(2026, 10, 3), today) == "내일 10/3(토)"
     assert date_label(date(2026, 10, 5), today) == "10/5(월)"
+
+
+def test_window_label():
+    assert window_label(7) == "1주 (오늘 포함 7일)"
+    assert window_label(28) == "4주 (오늘 포함 28일)"
+    assert window_label(3) == "3일 (오늘 포함)"
