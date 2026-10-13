@@ -304,13 +304,18 @@ def member_actions(member: dict, now) -> None:
         st.rerun()
 
 
+@st.dialog("임시 비밀번호 발급 완료")
+def notice_temp_password(student_id: str, temp: str) -> None:
+    st.success(f"{student_id}의 임시 비밀번호입니다. 이 화면을 벗어나면 다시 볼 수 없으니 본인에게 전달하세요.")
+    st.code(temp, language=None)
+
+
 def admin_users(actor: dict) -> None:
     show_flash("admin_users")
     notice = st.session_state.pop("temp_password_notice", None)
     if notice:
         sid, temp = notice
-        st.success(f"{sid}의 임시 비밀번호입니다. 이 화면을 벗어나면 다시 볼 수 없으니 본인에게 전달하세요.")
-        st.code(temp, language=None)
+        notice_temp_password(sid, temp)
 
     with st.expander("사용자 직접 추가"):
         with st.form("user_add", clear_on_submit=True):
@@ -378,7 +383,7 @@ def admin_users(actor: dict) -> None:
             c1.markdown(member_label(member, now))
             if member.get("is_admin") or member["student_id"] == actor["student_id"]:
                 continue
-            with c2.popover("관리", width="stretch"):
+            with c2.expander("관리", width="stretch"):
                 member_actions(member, now)
 
     if pages > 1:
@@ -449,7 +454,8 @@ def admin_reservations(actor: dict) -> None:
         st.markdown("#### 예약 취소")
         by_label = {
             f"{row['res_date']} {range_to_str(row['start_slot'], row['end_slot'])} · "
-            f"{(row.get('rooms') or {}).get('name', '')} · {row['student_id']}": row
+            f"{(row.get('rooms') or {}).get('name', '')} · {row['student_id']} "
+            f"{(row.get('users') or {}).get('name') or ''}": row
             for row in cancellable
         }
         choice = st.selectbox("취소할 예약", list(by_label), index=None, placeholder="예약 선택")

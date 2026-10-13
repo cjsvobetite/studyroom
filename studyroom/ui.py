@@ -84,13 +84,13 @@ def flash(scope: str, message: str, kind: str = "success") -> None:
 
 
 def show_flash(scope: str) -> None:
-    """flash()로 저장된 메시지를 한 번만 표시한다."""
+    """flash()로 저장된 메시지를 토스트 알림으로 한 번만 표시한다."""
     item = st.session_state.pop(f"flash_{scope}", None)
     if not item:
         return
     kind, message = item
-    show = {"success": st.success, "error": st.error, "warning": st.warning}.get(kind, st.info)
-    show(message)
+    icon = {"success": "✅", "error": "❌", "warning": "⚠️"}.get(kind, "ℹ️")
+    st.toast(message, icon=icon)
 
 
 def schedule_grid(
