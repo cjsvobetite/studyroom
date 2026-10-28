@@ -161,7 +161,7 @@ svg.forest{width:100%;height:auto;font-size:12px}.forest .grid{stroke:var(--line
 .gal figcaption{font-size:12px;color:var(--ink2)}.legend-sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
 ol.rec li{margin:4px 0}.hdr{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
 @media (max-width:640px){.page{margin:0;padding:20px 16px;border:0;border-radius:0}}
-@media print{body{background:#fff}.page{margin:0;border:0;padding:0;max-width:none}h2{break-after:avoid}table,figure,.callout{break-inside:avoid}
+@media print{body{background:#fff}.page{margin:0;border:0;padding:0;max-width:none}h2,h3{break-after:avoid}tr{break-inside:avoid}table,figure,.callout{break-inside:avoid}
 @page{size:A4;margin:16mm 14mm}}
 """
 

@@ -4,7 +4,7 @@
 「📄 Annotation 보고서 예시」 양식(2라운드 준비)의 **예비 검증(pre-validation) 보고서**를 자동으로 만듭니다.
 플랫폼 코드는 바꾸지 않고, 플랫폼이 이미 내보내는 형식(`annotations.json` + `imgs/` + `masks/` + `points/`)만 사용합니다.
 
-- 예시 보고서: [`examples/report.html`](examples/report.html) — 브라우저로 열고 인쇄 → PDF 저장(A4)
+- 예시 보고서: [`examples/report.pdf`](examples/report.pdf) (A4, 10쪽) · [`examples/report.html`](examples/report.html) — HTML은 브라우저에서 인쇄 → PDF 저장
 - 예시 화면: [`examples/screenshots/`](examples/screenshots/) (모든 수치는 가상 데이터)
 
 | 화면 | |
