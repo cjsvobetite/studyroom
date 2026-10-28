@@ -1,0 +1,401 @@
+﻿name,annotator,quality,quality_source,quality_reasons,prompts,final_source,final_ep,r1_ep,r2_ep,r1r2_ep_dice,ai_ep,ai_ep_dice,disagree,final:IRF,final:SRF,final:Drusen and drusenoid PED,final:Other PED,final:Hyperreflective foci,final:SHRM,final:Fibrotic HRM / subretinal fibrosis,final:Microaneurysm-like lesion,ai:IRF,ai:SRF,ai:Drusen and drusenoid PED,ai:Other PED,ai:Hyperreflective foci,ai:SHRM,ai:Fibrotic HRM / subretinal fibrosis,ai:Microaneurysm-like lesion
+OCT-0001.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,False,,True,0.0,False,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0002.png,reader_lee,good,auto,,1,R1,True,True,,,False,0.0,,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0003.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0004.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0005.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0006.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0007.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0008.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0009.png,reader_kim,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0010.png,reader_lee,ungradable,auto,신호 약함 (저대비),1,R1,True,True,,,True,0.7509578544061303,,1,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0
+OCT-0011.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0
+OCT-0012.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+OCT-0013.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0014.png,reader_lee,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0015.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0016.png,reader_lee,good,auto,,0,R3,False,False,False,,False,,True,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+OCT-0017.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,True,0.0,,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+OCT-0018.png,reader_lee,good,auto,,0,R1,True,True,,,True,0.9056603773584906,,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0019.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0020.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+OCT-0021.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0022.png,reader_lee,good,auto,,0,R3,False,False,False,,False,,True,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0023.png,reader_kim,good,auto,,0,R1,False,False,,,True,0.0,,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0
+OCT-0024.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0025.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0026.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0027.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,False,,False,,False,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0028.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0029.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0030.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0031.png,reader_kim,borderline,auto,신호 약함 (저대비),1,R1,True,True,,,True,0.8896473265073948,,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+OCT-0032.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0033.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0034.png,reader_lee,good,auto,,0,R1,True,True,,,True,0.681265206812652,,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+OCT-0035.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0036.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0037.png,reader_kim,good,auto,,1,R1,True,True,,,True,0.7928331466965286,,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+OCT-0038.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0039.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0040.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0041.png,reader_kim,borderline,auto,신호 약함 (저대비),1,R1,True,True,True,1.0,False,0.0,False,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0042.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0043.png,reader_kim,good,auto,,1,R1,True,True,,,True,1.0,,1,1,1,0,0,0,0,0,1,1,1,0,0,0,0,0
+OCT-0044.png,reader_lee,good,auto,,1,R1,True,True,,,True,0.9144002290294876,,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+OCT-0045.png,reader_kim,good,auto,,1,R3,True,True,True,0.9078525641025641,True,0.8273092369477911,True,1,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0
+OCT-0046.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0047.png,reader_kim,ungradable,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0048.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0049.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0050.png,reader_lee,good,auto,,0,R1,False,False,,,False,1.0,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0051.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0052.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0053.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0054.png,reader_lee,good,auto,,1,R1,False,False,,,True,0.0,,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0055.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+OCT-0056.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0057.png,reader_kim,good,auto,,1,R1,True,True,True,0.9078860172299537,False,0.0,False,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0058.png,reader_lee,good,auto,,0,R1,True,True,,,True,0.9277750848279205,,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0059.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0060.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0061.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0062.png,reader_lee,good,auto,,0,R1,True,True,True,1.0,True,0.8545803971812941,False,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0063.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0064.png,reader_lee,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0065.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0066.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0067.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,False,,False,,False,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+OCT-0068.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0069.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,False,,False,,False,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0070.png,reader_lee,good,auto,,1,R1,True,True,,,True,1.0,,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0
+OCT-0071.png,reader_kim,good,auto,,0,R1,False,False,False,,False,,False,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0072.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+OCT-0073.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0074.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+OCT-0075.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,0.1,,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0076.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,False,,False,,False,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0077.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0078.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0
+OCT-0079.png,reader_kim,good,auto,,1,R1,True,True,,,True,0.8690026954177897,,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0
+OCT-0080.png,reader_lee,good,auto,,0,R1,False,False,,,True,0.0,,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0
+OCT-0081.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+OCT-0082.png,reader_lee,good,auto,,0,R1,True,True,,,True,0.9001751313485113,,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+OCT-0083.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0084.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0085.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0086.png,reader_lee,good,auto,,1,R1,True,True,,,True,1.0,,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+OCT-0087.png,reader_kim,good,auto,,0,R3,False,False,False,,False,,True,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0
+OCT-0088.png,reader_lee,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0089.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0090.png,reader_lee,good,auto,,0,R1,False,False,,,True,0.0,,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0091.png,reader_kim,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+OCT-0092.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0093.png,reader_kim,good,auto,,0,R3,True,True,False,0.0,True,0.7833333333333333,True,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0
+OCT-0094.png,reader_lee,good,auto,,1,R1,True,True,,,True,0.2952029520295203,,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+OCT-0095.png,reader_kim,good,auto,,1,R1,True,True,,,False,0.0,,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0096.png,reader_lee,good,auto,,0,R1,True,True,,,True,0.7552155771905424,,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+OCT-0097.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0098.png,reader_lee,ungradable,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0099.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0100.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0101.png,reader_kim,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0102.png,reader_lee,good,auto,,1,R1,True,True,,,True,1.0,,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0
+OCT-0103.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0104.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0105.png,reader_kim,good,auto,,1,R1,True,True,True,0.9116279069767442,True,0.8423122296500196,False,1,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0
+OCT-0106.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0107.png,reader_kim,good,auto,,0,R1,True,True,,,False,0.0,,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0108.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0109.png,reader_kim,good,auto,,1,R1,True,True,,,True,0.3567567567567568,,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0110.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0111.png,reader_kim,good,auto,,1,R1,True,True,,,True,0.30324909747292417,,1,1,1,0,0,0,0,0,1,0,1,0,0,0,0,0
+OCT-0112.png,reader_lee,good,auto,,1,R1,True,True,,,True,0.7612687813021702,,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0
+OCT-0113.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0114.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0115.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0116.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0117.png,reader_kim,good,auto,,0,R1,False,False,,,True,0.0,,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0118.png,reader_lee,ungradable,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0119.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0120.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0121.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0122.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0123.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0124.png,reader_lee,ungradable,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0125.png,reader_kim,borderline,auto,신호 약함 (저대비),1,R1,True,True,,,True,0.4878048780487805,,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+OCT-0126.png,reader_lee,good,auto,,1,R3,True,True,True,0.8994548758328286,True,0.8809344385832706,True,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+OCT-0127.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0128.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0129.png,reader_kim,good,auto,,0,R1,True,True,,,True,0.9106894956038871,,1,1,1,0,0,0,0,0,1,1,1,0,0,0,0,0
+OCT-0130.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+OCT-0131.png,reader_kim,good,auto,,0,R1,True,True,,,True,0.9020408163265307,,1,1,0,0,1,0,0,0,1,1,0,0,0,0,0,0
+OCT-0132.png,reader_lee,good,auto,,1,R1,True,True,,,True,0.0,,0,1,1,0,0,0,0,0,1,0,1,0,0,0,0,0
+OCT-0133.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0134.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,True,True,,,False,0.0,,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+OCT-0135.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0136.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0137.png,reader_kim,good,auto,,0,R1,False,False,,,True,0.0,,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0
+OCT-0138.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0139.png,reader_kim,good,auto,,1,R1,True,True,,,True,0.8426966292134831,,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+OCT-0140.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,True,True,,,True,0.8426829268292683,,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+OCT-0141.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0142.png,reader_lee,good,auto,,1,R1,True,True,,,True,0.7876787678767877,,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+OCT-0143.png,reader_kim,good,auto,,0,R1,True,True,True,0.7887323943661971,True,0.9016602809706258,False,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0144.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0145.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0
+OCT-0146.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0147.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0
+OCT-0148.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+OCT-0149.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0150.png,reader_lee,good,auto,,1,R1,True,True,,,False,0.0,,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0151.png,reader_kim,good,auto,,1,R1,True,True,True,0.7542857142857143,True,0.6566265060240963,False,1,0,1,0,0,0,0,0,1,0,1,0,1,0,0,0
+OCT-0152.png,reader_lee,good,auto,,0,R3,False,False,False,,False,,True,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0
+OCT-0153.png,reader_kim,ungradable,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0154.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0155.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0156.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0157.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R3,False,False,False,,False,,True,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0
+OCT-0158.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+OCT-0159.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0160.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0
+OCT-0161.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0162.png,reader_lee,good,auto,,0,R1,True,True,,,True,0.8420091324200913,,1,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0
+OCT-0163.png,reader_kim,good,auto,,0,R1,True,True,,,True,0.7272727272727273,,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0164.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0165.png,reader_kim,good,auto,,0,R1,True,True,,,True,0.914572864321608,,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+OCT-0166.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0167.png,reader_kim,good,auto,,0,R1,False,False,False,,False,,False,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0168.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0169.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0170.png,reader_lee,good,auto,,0,R1,False,False,,,True,0.0,,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0
+OCT-0171.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0172.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0173.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0174.png,reader_lee,good,auto,,1,R1,True,True,True,0.8745387453874539,True,0.8382352941176471,False,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0175.png,reader_kim,good,auto,,1,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0176.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0177.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0178.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0179.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R3,False,False,False,,True,0.0,True,0,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0
+OCT-0180.png,reader_lee,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0181.png,reader_kim,good,auto,,1,R1,True,True,,,True,0.9046430354468298,,0,1,1,0,0,0,0,0,1,1,1,0,0,0,0,0
+OCT-0182.png,reader_lee,good,auto,,1,R1,True,True,,,False,0.0,,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0183.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0
+OCT-0184.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0185.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,True,True,,,True,0.8216039279869067,,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+OCT-0186.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,True,True,,,False,0.0,,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0187.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,True,0.0,,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+OCT-0188.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0189.png,reader_kim,good,auto,,1,R1,True,True,,,True,0.8421052631578947,,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0
+OCT-0190.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0191.png,reader_kim,good,auto,,0,R1,True,True,,,False,0.0,,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0192.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0193.png,reader_kim,borderline,auto,신호 약함 (저대비),1,R1,True,True,,,True,0.792910447761194,,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0
+OCT-0194.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,True,True,,,True,0.8953488372093024,,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+OCT-0195.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0196.png,reader_lee,good,auto,,0,R1,False,False,,,True,0.0,,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0
+OCT-0197.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0198.png,reader_lee,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0199.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0200.png,reader_lee,good,auto,,1,R1,True,True,,,True,0.8805970149253731,,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0201.png,reader_kim,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0202.png,reader_lee,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0203.png,reader_kim,ungradable,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0204.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0205.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0206.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,True,0.0,,0,0,1,0,0,0,0,0,1,0,1,0,0,0,0,0
+OCT-0207.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0208.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0
+OCT-0209.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0
+OCT-0210.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0211.png,reader_kim,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0212.png,reader_lee,good,auto,,1,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0213.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0214.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0215.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0216.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0217.png,reader_kim,good,auto,,0,R3,False,False,False,,False,,True,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+OCT-0218.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0219.png,reader_kim,good,auto,,1,R1,True,True,,,True,1.0,,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0220.png,reader_lee,good,auto,,0,R1,False,False,False,,True,0.0,False,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+OCT-0221.png,reader_kim,borderline,auto,신호 약함 (저대비),1,R1,True,True,,,False,0.0,,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0222.png,reader_lee,good,auto,,0,R1,False,False,False,,False,,False,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0223.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0224.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0225.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0226.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0227.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0228.png,reader_lee,good,auto,,1,R1,True,True,,,False,0.0,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0229.png,reader_kim,good,auto,,0,R1,False,False,,,True,0.0,,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+OCT-0230.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0231.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0232.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0233.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0234.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0235.png,reader_kim,good,auto,,1,R1,True,True,True,0.8928974069898534,True,0.7725,False,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+OCT-0236.png,reader_lee,borderline,auto,신호 약함 (저대비),1,R1,True,True,,,True,0.8176100628930818,,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+OCT-0237.png,reader_kim,ungradable,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0238.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0239.png,reader_kim,ungradable,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0240.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0241.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0242.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0243.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0244.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R3,False,False,False,,True,0.0,True,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0245.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0246.png,reader_lee,ungradable,auto,신호 약함 (저대비),1,R1,True,True,,,True,0.8490466101694916,,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+OCT-0247.png,reader_kim,good,auto,,1,R1,True,True,,,True,0.640764331210191,,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0248.png,reader_lee,good,auto,,0,R1,True,True,,,False,0.0,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0249.png,reader_kim,good,auto,,1,R1,True,True,,,True,0.8172323759791122,,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+OCT-0250.png,reader_lee,ungradable,auto,신호 약함 (저대비),1,R1,True,True,,,True,0.7593220338983051,,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+OCT-0251.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0252.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0253.png,reader_kim,ungradable,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0254.png,reader_lee,good,auto,,1,R1,True,True,,,True,0.8108108108108109,,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+OCT-0255.png,reader_kim,good,auto,,0,R1,False,False,,,True,0.0,,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0256.png,reader_lee,good,auto,,0,R1,True,True,,,False,0.0,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0257.png,reader_kim,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0258.png,reader_lee,good,auto,,0,R1,True,True,,,False,0.0,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0259.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0260.png,reader_lee,ungradable,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0261.png,reader_kim,good,auto,,1,R3,True,True,True,0.9233766233766234,True,1.0,True,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+OCT-0262.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0263.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0264.png,reader_lee,ungradable,auto,신호 약함 (저대비),1,R1,True,True,,,False,0.0,,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0265.png,reader_kim,good,auto,,0,R1,True,True,,,False,0.0,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0266.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0267.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0268.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+OCT-0269.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0270.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0271.png,reader_kim,good,auto,,1,R1,True,True,True,0.7668393782383419,True,0.0,False,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0272.png,reader_lee,ungradable,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0273.png,reader_kim,good,auto,,1,R1,True,True,,,True,0.484149855907781,,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+OCT-0274.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+OCT-0275.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,False,,False,,False,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0276.png,reader_lee,good,auto,,1,R1,True,True,,,True,0.8674548848786559,,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0277.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+OCT-0278.png,reader_lee,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0279.png,reader_kim,good,auto,,1,R1,True,True,,,True,1.0,,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0280.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0281.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+OCT-0282.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0283.png,reader_kim,good,auto,,0,R1,True,True,,,True,0.9027355623100304,,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0284.png,reader_lee,good,auto,,1,R1,True,True,,,True,0.7964601769911505,,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0285.png,reader_kim,good,auto,,0,R1,True,True,,,False,0.0,,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0286.png,reader_lee,good,auto,,1,R1,True,True,,,True,1.0,,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0287.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0288.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,True,True,,,True,0.9033570701932858,,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0
+OCT-0289.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0290.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,True,True,,,True,0.8465199286139203,,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+OCT-0291.png,reader_kim,good,auto,,1,R3,True,True,True,0.7235649546827795,True,1.0,True,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0
+OCT-0292.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0293.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+OCT-0294.png,reader_lee,good,auto,,1,R1,True,True,,,True,0.4371584699453552,,1,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+OCT-0295.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0296.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0297.png,reader_kim,good,auto,,0,R1,True,True,,,True,0.8473282442748091,,0,1,1,0,1,0,0,0,0,1,1,0,0,0,0,0
+OCT-0298.png,reader_lee,borderline,auto,신호 약함 (저대비),1,R1,True,True,,,False,0.0,,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0299.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0300.png,reader_lee,borderline,auto,신호 약함 (저대비),1,R1,True,True,,,False,0.3511450381679389,,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0301.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,True,True,,,False,0.0,,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0302.png,reader_lee,good,auto,,0,R3,False,False,False,,False,,True,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0
+OCT-0303.png,reader_kim,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0304.png,reader_lee,good,auto,,1,R1,True,True,,,True,0.8903508771929824,,1,0,1,0,0,0,0,0,1,0,1,0,0,0,0,0
+OCT-0305.png,reader_kim,good,auto,,1,R1,True,True,True,0.9151732377538829,True,0.9151732377538829,False,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0306.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0307.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0308.png,reader_lee,good,auto,,1,R1,True,True,,,True,0.9181286549707602,,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0309.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0310.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0311.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0312.png,reader_lee,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0313.png,reader_kim,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0314.png,reader_lee,good,auto,,0,R1,True,True,True,0.9381860196418256,True,0.9381860196418256,False,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0
+OCT-0315.png,reader_kim,borderline,auto,신호 약함 (저대비),1,R1,True,True,True,0.9214586255259467,True,1.0,False,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0316.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,True,True,,,True,0.7678018575851393,,1,0,1,0,0,0,0,0,1,0,1,0,0,0,0,0
+OCT-0317.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0318.png,reader_lee,good,auto,,1,R1,True,True,,,True,1.0,,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0319.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0320.png,reader_lee,good,auto,,0,R1,True,True,,,False,0.0,,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0321.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0322.png,reader_lee,good,auto,,1,R1,True,True,,,True,0.9013333333333333,,0,1,1,0,0,0,0,0,1,1,1,0,0,0,0,0
+OCT-0323.png,reader_kim,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0324.png,reader_lee,good,auto,,1,R1,True,True,,,True,0.8523956723338485,,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+OCT-0325.png,reader_kim,borderline,auto,신호 약함 (저대비),1,R1,True,True,,,True,1.0,,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+OCT-0326.png,reader_lee,ungradable,auto,신호 약함 (저대비),0,R1,False,False,,,True,0.0,,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0,0
+OCT-0327.png,reader_kim,good,auto,,1,R1,True,True,,,False,0.0,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0328.png,reader_lee,good,auto,,0,R1,False,False,,,True,0.0,,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+OCT-0329.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0330.png,reader_lee,good,auto,,1,R1,True,True,,,False,0.0,,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0331.png,reader_kim,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0332.png,reader_lee,good,auto,,0,R1,True,True,,,True,0.735659847573205,,1,1,1,0,0,0,0,0,1,1,1,0,0,0,0,0
+OCT-0333.png,reader_kim,good,auto,,0,R1,True,True,,,True,0.7023945267958951,,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0
+OCT-0334.png,reader_lee,good,auto,,1,R1,True,True,,,True,0.7994241842610365,,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0
+OCT-0335.png,reader_kim,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0
+OCT-0336.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0337.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+OCT-0338.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0339.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0340.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0341.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0342.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0343.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0344.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0345.png,reader_kim,good,auto,,1,R1,True,True,,,False,0.0,,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0346.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0347.png,reader_kim,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0348.png,reader_lee,borderline,auto,신호 약함 (저대비),1,R1,True,True,,,False,0.0,,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0349.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0
+OCT-0350.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0351.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0
+OCT-0352.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0353.png,reader_kim,ungradable,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0354.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0355.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0356.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0357.png,reader_kim,good,auto,,1,R1,True,True,True,0.9141630901287554,True,0.9141630901287554,False,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0358.png,reader_lee,ungradable,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0359.png,reader_kim,good,auto,,0,R1,False,False,False,,False,,False,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0360.png,reader_lee,good,auto,,1,R1,True,True,,,True,1.0,,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0
+OCT-0361.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0362.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,False,,False,,False,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0363.png,reader_kim,good,auto,,0,R1,True,True,,,True,0.8922363847045192,,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+OCT-0364.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0
+OCT-0365.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0366.png,reader_lee,borderline,auto,신호 약함 (저대비),1,R1,True,True,,,False,0.0,,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0367.png,reader_kim,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0368.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0369.png,reader_kim,good,auto,,1,R1,True,True,,,True,1.0,,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0
+OCT-0370.png,reader_lee,ungradable,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0371.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0372.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0373.png,reader_kim,good,auto,,0,R1,False,False,,,True,0.0,,0,0,1,0,0,0,0,0,1,0,1,0,0,0,0,0
+OCT-0374.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0375.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0376.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0
+OCT-0377.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,True,True,,,True,0.7643312101910829,,1,1,1,0,0,0,0,0,1,1,1,0,0,0,0,0
+OCT-0378.png,reader_lee,borderline,auto,신호 약함 (저대비),1,R1,True,True,,,True,0.7878787878787878,,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0
+OCT-0379.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0380.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0381.png,reader_kim,good,auto,,0,R1,True,True,,,True,1.0,,1,0,1,0,0,0,0,0,1,0,1,0,0,0,0,0
+OCT-0382.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0383.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0384.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0385.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0386.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0387.png,reader_kim,borderline,auto,신호 약함 (저대비),1,R1,True,True,,,True,0.8241758241758241,,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0388.png,reader_lee,good,auto,,0,R1,False,False,False,,False,,False,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0389.png,reader_kim,borderline,auto,신호 약함 (저대비),1,R1,True,True,,,True,0.9184247538677919,,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0390.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0391.png,reader_kim,good,auto,,0,R1,False,False,,,False,,,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0
+OCT-0392.png,reader_lee,good,auto,,0,R1,False,False,,,False,1.0,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0393.png,reader_kim,good,auto,,1,R1,True,True,,,True,0.782016348773842,,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0394.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0
+OCT-0395.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0396.png,reader_lee,borderline,auto,신호 약함 (저대비),0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OCT-0397.png,reader_kim,ungradable,auto,신호 약함 (저대비),1,R1,True,True,,,True,0.8375893769152196,,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0398.png,reader_lee,borderline,auto,신호 약함 (저대비),1,R1,True,True,,,True,0.8237704918032787,,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+OCT-0399.png,reader_kim,borderline,auto,신호 약함 (저대비),0,R3,False,False,False,,False,,True,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0
+OCT-0400.png,reader_lee,good,auto,,0,R1,False,False,,,False,,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

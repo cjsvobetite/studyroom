@@ -1,0 +1,37 @@
+{
+  "report": {
+    "number": "RTN-PV-2026-001",
+    "version": "v1.0",
+    "title": "어노테이션 예비 검증 보고서",
+    "client": "○○ AI (가칭)",
+    "target_ai": "OCT 삼출성 액체(IRF·SRF) 분할 AI (원 학습 장비: 장비 A)",
+    "purpose": "신규 장비 B에서 의뢰 AI의 삼출성 액체 검출 성능 예비 확인",
+    "data_desc": "",
+    "period": "7주",
+    "org": "레티노베이션 (Retinnovation)",
+    "responsible": "망막 전문의 (판독 기준·SOP 책임)",
+    "demo": true
+  },
+  "endpoint": {"name": "삼출성 액체 (IRF 또는 SRF)", "labels": ["IRF", "SRF"]},
+  "min_lesion_px": 30,
+  "small_lesion_px": 400,
+  "disagreement_dice": 0.5,
+  "subgroups": [
+    {"column": "age", "name": "연령", "bins": [0, 65, 200], "labels": ["65세 미만", "65세 이상"]},
+    {"column": "sex", "name": "성별"}
+  ],
+  "baseline": {"label": "장비 A (의뢰사 제공 기준값)", "sensitivity": 0.93, "specificity": 0.91},
+  "flag_drop": 0.05,
+  "readers": {
+    "reader_kim": {"role": "R1", "qualification": "안과 전문의 (망막)", "sop": "2026-10", "gold_kappa": 0.89},
+    "reader_lee": {"role": "R1", "qualification": "안과 전문의 (망막)", "sop": "2026-10", "gold_kappa": 0.87},
+    "reader_park": {"role": "R2", "qualification": "안과 전문의", "sop": "2026-10", "gold_kappa": 0.85},
+    "reader_hwang": {"role": "R3", "qualification": "망막 전문의 (판독 책임자)", "sop": "—", "gold_kappa": "기준 판독자"}
+  },
+  "data_handling": [
+    "수령 시 비식별 상태 재확인 (DICOM 태그·영상 내 텍스트)",
+    "접근 권한: 판독자·QC 담당자 한정, 플랫폼 이벤트 로그(업로드·배정·제출·재오픈) 보관",
+    "원본 영상은 계약 종료 후 30일 내 파기, 파기 확인서 발급"
+  ],
+  "gallery": 6
+}

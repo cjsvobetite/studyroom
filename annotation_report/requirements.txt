@@ -1,0 +1,3 @@
+# annotation_report: automatic annotation report from oct-platform export zips
+numpy>=1.22
+Pillow>=10
