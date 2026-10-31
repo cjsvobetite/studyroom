@@ -4,7 +4,7 @@
 「📄 Annotation 보고서 예시」 양식(2라운드 준비)의 **예비 검증(pre-validation) 보고서**를 자동으로 만듭니다.
 플랫폼 코드는 바꾸지 않고, 플랫폼이 이미 내보내는 형식(`annotations.json` + `imgs/` + `masks/` + `points/`)만 사용합니다.
 
-- 예시 보고서: [`examples/report.pdf`](examples/report.pdf) (A4, 10쪽) · [`examples/report.html`](examples/report.html) — HTML은 브라우저에서 인쇄 → PDF 저장
+- 예시 보고서: [`examples/report.pdf`](examples/report.pdf) (A4) · [`examples/report.html`](examples/report.html) — HTML은 브라우저에서 인쇄 → PDF 저장
 - 예시 화면: [`examples/screenshots/`](examples/screenshots/) (모든 수치는 가상 데이터)
 
 | 화면 | |
@@ -71,6 +71,19 @@ python -m annotation_report predict --export R1.zip --model-url http://127.0.0.1
 | 8. 권고사항 | 규칙 기반: 저성능 구간 추가 확보 장수(95% CI ±5%p에 필요한 양성 수), 촬영 프로토콜, 화질 필터, 혼동 병변 보강, κ < 0.6 라벨 SOP 보완, 중복 정리 |
 | 9. 해석 범위와 한계 | 단일 판독 비율, 자동 QC 사용 건수 등을 넣은 고정 문구 (보고서가 보증하는 것 / 보증하지 않는 것) |
 | 부록 A–C | 불일치 조정 이력(R1·R2·확정·Review 노트), 판독자 정보(확정 라벨 대비 κ), 데이터 처리(SHA-256 목록 해시, 동일·유사 중복 영상) |
+
+## 색 구분 (보고서 안 표시)
+
+생성기는 자기가 계산할 수 없는 칸을 비워 두지 않고, 누가 채워야 하는지를 색으로 표시합니다.
+
+| 색 | 뜻 | 항목 |
+|---|---|---|
+| 검정 | 플랫폼 export에서 자동 산출 | 영상 수, QC 분포, 일치도, 민감도·특이도, 서브그룹, 오류 원인 분류, 규칙 기반 요약·권고, 중복 점검 |
+| 빨강 | 전문의가 직접 입력·확인 | 판독 책임자, 라벨별 판독 정의(SOP), 맹검 여부, 자동 화질 분류 확인, 오류 원인별 판독자 소견, 사례 소견·조정 근거(플랫폼 Review 노트), 판독자 자격·SOP 이수·골드스탠다드 κ, 권고 승인, 서명 |
+| 파랑 | LLM을 연결하면 초안 작성 (전문의 검토 후 확정) | 의뢰 기관·대상 AI·목적·기간(의뢰서·계약서에서 추출), 종합 해석 문단, 의뢰사 기준 성능값, 오류 경향 서술, 권고 상세 설명, 데이터 처리 조건 |
+
+플랫폼 Review 노트처럼 이미 전문의가 입력한 내용은 빨간 글씨로 채워지고, 비어 있으면 빨간 점선 칸이 남습니다.
+채운 내용은 `report_config.json`의 `expert`, `llm` 항목으로 넣으면 같은 색으로 표시됩니다(키 목록은 `analysis.py`의 `DEFAULT_CONFIG`).
 
 ## 주의
 

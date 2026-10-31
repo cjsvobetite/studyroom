@@ -38,6 +38,10 @@ DEFAULT_CONFIG = {
     "readers": {},                   # username -> {"role", "qualification", "sop", "gold_kappa"}
     "data_handling": [],
     "gallery": 6,
+    # filled-in text for the coloured slots of the report (render.py); empty slots render as placeholders
+    "expert": {},                    # red: blinding, sop, qc_check, fn_opinion {cause key}, fp_opinion, review, signoff
+    "llm": {},                       # blue: summary, cover {client, target_ai, purpose, period}, baseline, errors,
+                                     #       recommendations, data_handling
 }
 
 QUALITY_KO = {"good": "양호", "borderline": "경계 (판독 가능)", "ungradable": "판독 불가"}
@@ -152,6 +156,8 @@ def build(primary, second=None, adjudicated=None, ai=None, metadata=None, config
             r3 = None
         final = r3 if r3 is not None else r1
         row["final_source"] = "R3" if r3 is not None else "R1"
+        if r3 is not None:
+            row["r3_annotator"] = c3.annotator
         if r2 is not None:
             row["r2_annotator"] = c2.annotator
             row["r2"] = presence(r2)
@@ -390,11 +396,16 @@ def _readers(data, gradable, cfg):
             out.append({"id": who, "role": info.get("role", role), "qualification": info.get("qualification", ""),
                         "sop": info.get("sop", ""), "gold_kappa": info.get("gold_kappa"), "n": len(mine),
                         "kappa_final": None if k is None else round(k, 2)})
-    for who, info in cfg["readers"].items():
-        if info.get("role") == "R3":
-            out.append({"id": who, "role": "R3", "qualification": info.get("qualification", ""),
-                        "sop": info.get("sop", "—"), "gold_kappa": info.get("gold_kappa", "기준 판독자"),
-                        "n": data["procedure"]["n_adjudicated"], "kappa_final": None})
+    r3 = {}
+    for r in gradable:
+        if r.get("r3_annotator"):
+            r3[r["r3_annotator"]] = r3.get(r["r3_annotator"], 0) + 1
+    r3.update({who: r3.get(who, data["procedure"]["n_adjudicated"]) for who, info in cfg["readers"].items()
+               if info.get("role") == "R3"})
+    for who, n in sorted(r3.items()):
+        info = cfg["readers"].get(who, {})
+        out.append({"id": who, "role": "R3", "qualification": info.get("qualification", ""), "sop": info.get("sop", ""),
+                    "gold_kappa": info.get("gold_kappa", "기준 판독자"), "n": n, "kappa_final": None})
     data["readers"] = out
 
 

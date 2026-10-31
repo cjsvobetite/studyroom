@@ -99,6 +99,8 @@ def test_build_report(exports, tmp_path):
     run_report(primary, second, adjudicated, ai, config=str(tmp_path / "cfg.json"), out=str(out))
     html = (out / "report.html").read_text(encoding="utf-8")
     assert "어노테이션 예비 검증 보고서" in html and "부록 A" in html
+    assert '<span class=ex>SRF 확인</span>' in html                # expert text from the platform: red
+    assert "[전문의 입력] 판독 책임자" in html and "[LLM 작성]</b> 종합 해석" in html   # empty slots: placeholders
     assert json.loads((out / "report.json").read_text(encoding="utf-8"))["qc"]["n"] == 6
     assert (out / "cases.csv").read_text(encoding="utf-8-sig").startswith("name,")
 

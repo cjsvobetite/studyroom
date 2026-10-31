@@ -186,12 +186,7 @@ def make_demo(out, n=400, seed=7):
             d = dice(np.isin(m1, [IRF, SRF]), np.isin(m2, [IRF, SRF]))
             pres = lambda m: {v for v in (IRF, SRF, DRUSEN, HRF) if (m == v).sum() >= 30}  # noqa: E731
             if pres(m1) != pres(m2) or (d is not None and d < 0.5):
-                note = ("소형 IRF 확인 (R2 누락)" if IRF in pres(m1) ^ pres(m2) else
-                        "RPE 융기는 드루젠, SRF 아님" if SRF in pres(m1) ^ pres(m2) else
-                        "HRF 2개 이상 확인" if HRF in pres(m1) ^ pres(m2) else
-                        "RPE 융기 확인, 드루젠 포함" if DRUSEN in pres(m1) ^ pres(m2) else "경계 재설정")
-                r3.append({"id": i + 1, "name": name, "sha256": sha, "mask": truth, "annotator": "reader_hwang",
-                           "review": {"text": note, "by": "reader_hwang", "at": "2026-10-24T09:00:00Z"}})
+                r3.append({"id": i + 1, "name": name, "sha256": sha, "mask": truth, "annotator": "reader_r3"})
         # AI: misses on borderline quality / older eyes / edge, confuses drusen with SRF, some noise blobs
         p_miss = 0.04 + (0.16 if quality == "borderline" else 0) + (0.05 if old else 0) + (0.6 if facts["edge"] else 0)
         pa = _perturb(rng, truth, miss_small=0.5, grow=int(rng.integers(-2, 2)))
