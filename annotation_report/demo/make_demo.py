@@ -12,7 +12,7 @@ import zipfile
 import numpy as np
 from PIL import Image, ImageFilter
 
-from ..metrics import dice
+from ..metrics import dice, edge_touch
 
 W, H = 320, 160
 LABELS = [  # the platform's default OCT labels (modalities.py), value = index + 1
@@ -133,8 +133,11 @@ def _export(path, project, cases, labels=LABELS):
             "cases": recs}, ensure_ascii=False, indent=1))
 
 
-def make_demo(out, n=400, seed=7):
-    """Writes R1 / R2 / R3 / AI exports, meta.csv and report_config.json into `out`; -> kwargs for run_report."""
+def make_demo(out, n=400, seed=7, filled=False):
+    """Writes R1 / R2 / R3 / AI exports, meta.csv and report_config.json into `out`; -> kwargs for run_report.
+
+    filled=True also writes fictional specialist notes (R3 adjudication reasons, R1 review notes on the AI's error
+    cases) and uses report_config_filled.json, whose `expert` / `llm` entries fill every red and blue slot."""
     import hashlib
 
     rng = np.random.default_rng(seed)
@@ -186,7 +189,14 @@ def make_demo(out, n=400, seed=7):
             d = dice(np.isin(m1, [IRF, SRF]), np.isin(m2, [IRF, SRF]))
             pres = lambda m: {v for v in (IRF, SRF, DRUSEN, HRF) if (m == v).sum() >= 30}  # noqa: E731
             if pres(m1) != pres(m2) or (d is not None and d < 0.5):
-                r3.append({"id": i + 1, "name": name, "sha256": sha, "mask": truth, "annotator": "reader_r3"})
+                rec = {"id": i + 1, "name": name, "sha256": sha, "mask": truth, "annotator": "reader_r3"}
+                if filled:
+                    diff = pres(m1) ^ pres(m2)
+                    note = ("소형 IRF 확인 (R2 누락)" if IRF in diff else "RPE 융기는 드루젠, SRF 아님" if SRF in diff
+                            else "HRF 2개 이상 확인" if HRF in diff else "RPE 융기 확인, 드루젠 포함" if DRUSEN in diff
+                            else "액체 경계 재설정")
+                    rec["review"] = {"text": note, "by": "reader_r3", "at": "2026-10-24T09:00:00Z"}
+                r3.append(rec)
         # AI: misses on borderline quality / older eyes / edge, confuses drusen with SRF, some noise blobs
         p_miss = 0.04 + (0.16 if quality == "borderline" else 0) + (0.05 if old else 0) + (0.6 if facts["edge"] else 0)
         pa = _perturb(rng, truth, miss_small=0.5, grow=int(rng.integers(-2, 2)))
@@ -197,6 +207,18 @@ def make_demo(out, n=400, seed=7):
         if rng.random() < 0.04:
             pa[_ellipse(rng.uniform(60, W - 60), rng.uniform(60, 90), 6, 4) & (pa == 0)] = IRF
         ai.append({"id": i + 1, "name": name, "sha256": sha, "mask": pa, "annotator": "AI"})
+        fluid_px = lambda m: int(np.isin(m, [IRF, SRF]).sum())  # noqa: E731
+        if filled and (fluid_px(truth) >= 30) != (fluid_px(pa) >= 30):
+            fluid_t, fluid_p = np.isin(truth, [IRF, SRF]), np.isin(pa, [IRF, SRF])
+            if fluid_px(truth) >= 30:                # missed: same order as analysis.FN_CAUSES
+                note = ("스캔 가장자리 소량 액체, 중심와 영향 없음" if edge_touch(fluid_t) else
+                        "신호 약한 영상에서 저반사 공간 대비 낮음" if quality == "borderline" else
+                        "소형 저반사 병변, 임상적 의미 낮음" if fluid_t.sum() < 400 else "드루젠 인접 SRF, 경계 판단 어려움")
+            else:                                    # false alarm: same order as analysis.FP_CAUSES
+                note = ("RPE 위 드루젠 융기, 액체 아님" if (fluid_p & (truth > 0)).sum() > 0.3 * fluid_p.sum() else
+                        "잡음이 많은 영상의 저반사 반점" if quality == "borderline" else
+                        "잡음성 소형 예측" if fluid_p.sum() < 400 else "판단 보류")
+            r1[-1]["review"] = {"text": note, "by": "reader_r3", "at": "2026-10-25T09:00:00Z"}
 
     paths = {k: os.path.join(out, f"{k}.zip") for k in ("primary", "second", "adjudicated", "ai")}
     _export(paths["primary"], "OCT 장비 B 예비검증 (R1)", r1)
@@ -205,7 +227,7 @@ def make_demo(out, n=400, seed=7):
     _export(paths["ai"], "의뢰 AI 예측", ai)
     with open(os.path.join(out, "meta.csv"), "w", encoding="utf-8") as f:
         f.write("\n".join(meta) + "\n")
-    cfg_src = os.path.join(os.path.dirname(__file__), "report_config.json")
+    cfg_src = os.path.join(os.path.dirname(__file__), "report_config_filled.json" if filled else "report_config.json")
     cfg_dst = os.path.join(out, "report_config.json")
     with open(cfg_src, encoding="utf-8") as f, open(cfg_dst, "w", encoding="utf-8") as g:
         g.write(f.read())

@@ -383,6 +383,8 @@ def render(data, gallery_items=()):
       "영상별 결과(cases.csv), 집계 원자료(report.json)</li></ul>")
     w("<h2>확인 및 서명</h2>")
     w(_table(["역할", "성명", "서명", "일자"],
-             [[r, _ex(None, "성명"), _ex(None, "서명"), _ex(None, "일자")] for r in ("판독 책임자 (R3)", "QC 담당자")], "sign"))
+             [[r, *(_ex((ex.get("signoff") or {}).get(r, {}).get(k), label) for k, label in
+                    (("name", "성명"), ("sign", "서명"), ("date", "일자")))] for r in ("판독 책임자 (R3)", "QC 담당자")],
+             "sign"))
     w("</main></body></html>")
     return "".join(out)

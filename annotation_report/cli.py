@@ -1,7 +1,7 @@
 """python -m annotation_report report  --primary R1.zip [--second R2.zip] [--adjudicated R3.zip] [--ai AI.zip]
                                       [--meta meta.csv] [--config report.json] --out out_dir
    python -m annotation_report predict --export R1.zip --model-url http://127.0.0.1:8100 --out ai_dir
-   python -m annotation_report demo    --out out_dir [--n 400]     (synthetic data + example report)
+   python -m annotation_report demo    --out out_dir [--n 400] [--filled]   (synthetic data + example report)
 """
 import argparse
 import json
@@ -51,6 +51,7 @@ def main(argv=None):
     d.add_argument("--out", default="demo_out")
     d.add_argument("--n", type=int, default=400)
     d.add_argument("--seed", type=int, default=7)
+    d.add_argument("--filled", action="store_true", help="fill every specialist / LLM slot with fictional text")
     args = ap.parse_args(argv)
 
     if args.cmd == "report":
@@ -64,6 +65,6 @@ def main(argv=None):
         print(f"{n} predictions -> {args.out}")
     else:
         from .demo.make_demo import make_demo
-        paths = make_demo(args.out, args.n, args.seed)
+        paths = make_demo(args.out, args.n, args.seed, args.filled)
         run_report(**paths, out=args.out)
         print(f"demo report -> {os.path.join(args.out, 'report.html')}")

@@ -5,6 +5,8 @@
 플랫폼 코드는 바꾸지 않고, 플랫폼이 이미 내보내는 형식(`annotations.json` + `imgs/` + `masks/` + `points/`)만 사용합니다.
 
 - 예시 보고서: [`examples/report.pdf`](examples/report.pdf) (A4) · [`examples/report.html`](examples/report.html) — HTML은 브라우저에서 인쇄 → PDF 저장
+- 가상 내용까지 채운 예시: [`examples/filled/report.pdf`](examples/filled/report.pdf) · [`examples/filled/report.html`](examples/filled/report.html)
+  (`python -m annotation_report demo --filled`, 설정: [`demo/report_config_filled.json`](demo/report_config_filled.json))
 - 예시 화면: [`examples/screenshots/`](examples/screenshots/) (모든 수치는 가상 데이터)
 
 | 화면 | |

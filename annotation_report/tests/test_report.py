@@ -119,3 +119,12 @@ def test_demo(tmp_path):
     data = run_report(**paths, out=str(tmp_path))
     assert data["qc"]["n"] == 60 and data["ai"]["n"] > 0
     assert data["handling"]["exact_duplicates"] == [["OCT-0018.png", "OCT-0058.png"]]
+
+
+def test_demo_filled_has_no_empty_slots(tmp_path):
+    from annotation_report.demo.make_demo import make_demo
+
+    paths = make_demo(str(tmp_path), n=80, seed=3, filled=True)
+    run_report(**paths, out=str(tmp_path))
+    html = (tmp_path / "report.html").read_text(encoding="utf-8")
+    assert 'class="ex ph"' not in html and 'class="llm ph"' not in html
